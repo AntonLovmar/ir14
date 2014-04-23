@@ -1,0 +1,1 @@
+'''Z2''' konstruerades av [[Konrad Zuse]] som en prototyp på en [[relädator]]. Detta är alltså en tidig [[dator]]. Z2 blev klar år [[1939]] och bildade grunden för [[Z3]].{{hårdvarustub}}[[Kategori:Datorhistoria]][[da:Z2]][[de:Zuse Z2]][[en:Z2 (computer)]][[es:Z2]][[fr:Zuse 2]][[it:Z2 (computer)]][[pl:Z2]][[pt:Z2]][[ru:Z2]]

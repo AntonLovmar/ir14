@@ -1,0 +1,120 @@
+/*  
+ *   This file is part of the computer assignment for the
+ *   Information Retrieval course at KTH.
+ * 
+ *   First version:  Johan Boye, 2010
+ *   Second version: Johan Boye, 2012
+ */  
+
+package ir;
+
+import java.util.LinkedList;
+import java.io.Serializable;
+
+public class OffsetList implements Serializable {
+
+    private LinkedList<OffsetEntry> list = new LinkedList<OffsetEntry>(); 
+
+    /**
+     *  Create an empty OffsetList
+     */
+    public OffsetList() {
+    }
+
+    /**
+     *  Create an OffsetList with a single entry
+     */
+    public OffsetList( int offset ) {
+	add( 0, offset );
+    }
+
+
+    public int size() {
+	return list.size();
+    }
+
+    public int get( int i ) {
+	return list.get(i).offset;
+    }
+
+    public void addLast( int o  ) {
+	list.addLast( new OffsetEntry( o ));
+    }
+
+    public void add( int i, int o ) {
+	list.add( i, new OffsetEntry( o ));
+    }
+
+	
+    /**
+     *  Inserts a new position into the list.
+     */
+    public void insert( int offset ) {
+	addLast( offset );
+    }
+
+
+    /**
+     *  Merges the OffsetList @code{other} into this list.
+     *  The resulting list is in sorted order.
+     *  Used in assignment 1.4.
+     */
+    public void insert( OffsetList other ) {
+	int i=0, j=0;
+	while ( i<size() && j<other.size() ) {
+	    if ( get(i) == other.get(j) ) {
+		// This offset already exists in the list
+		i++;
+		j++;
+	    } 
+	    else if ( get(i) > other.get(j) ) {
+		add( i, other.get(j++) );
+	    }
+	    else {
+		i++;
+	    }
+	}
+	if ( i == size() ) {
+	    for ( int k=j; k<other.size(); k++ ) {
+		addLast( other.get( k ));
+	    }
+	}
+    }
+
+
+    /**
+     *  Appends the OffsetList @code{other} to this list.
+     */    
+    public void append( OffsetList other ) {
+	list.addAll( other.list );
+    }
+
+    /**
+     *  If offset x appears in this list, and offset x+1 
+     *  appears in @code{other}, then add x+1 to the resulting
+     *  list.
+     */
+    public OffsetList positionalIntersect( OffsetList other ) {
+	OffsetList res = new OffsetList();
+	int i=0, j=0;
+	while ( i<size() && j<other.size() ) {
+	    if ( other.get(j)-get(i) == 1 ) {
+		res.addLast( other.get(j) );
+		i++;
+		j++;
+	    }
+	    else if ( get(i) >= other.get(j) ) {
+		j++;
+	    }
+	    else {
+		i++;
+	    }
+	}
+	return res;
+    }
+
+}
+
+
+
+

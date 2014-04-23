@@ -1,0 +1,1 @@
+'''Small-C''' är en något begränsad implementation av [[C (programspråk)|C]] lämplig för [[inbäddade system]] och [[mikrodator|mikrodatorer]] med begränsade resurser.== Se även ==*[[Z88DK]]==Externa länkar==* http://www.cpm.z80.de/small_c.html[[Kategori:Programspråk]][[en:Small-C]][[es:Small-C]]

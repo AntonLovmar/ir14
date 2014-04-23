@@ -1,0 +1,1 @@
+'''REX 5000''' är en [[handdator]] från [[Xircom]] som inte bara är liten som ett kreditkort utan hela datorn är ett [[PC Card]]. Den största nackelen med REX 5000 är att den i princip saknar inmatningsmöjligheter förutom de fyra knapparna. Detta löstes i [[REX 6000]] genom att ha en tryckkänslig skärm.{{datorstub}}[[Kategori:Handdatorer]][[en:REX 5000]]

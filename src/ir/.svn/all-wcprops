@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/ir_lab/!svn/ver/7/skeleton/ir
+END
+OffsetList.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/ir_lab/!svn/ver/2/skeleton/ir/OffsetList.java
+END
+PostingsList.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/ir_lab/!svn/ver/2/skeleton/ir/PostingsList.java
+END
+OutputToFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/ir_lab/!svn/ver/4/skeleton/ir/OutputToFile.java
+END
+HashedIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/ir_lab/!svn/ver/6/skeleton/ir/HashedIndex.java
+END
+SimpleTokenizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/ir_lab/!svn/ver/2/skeleton/ir/SimpleTokenizer.java
+END
+Query.java
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/ir_lab/!svn/ver/2/skeleton/ir/Query.java
+END
+Index.java
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/ir_lab/!svn/ver/6/skeleton/ir/Index.java
+END
+OffsetEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/ir_lab/!svn/ver/2/skeleton/ir/OffsetEntry.java
+END
+PostingsEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/ir_lab/!svn/ver/2/skeleton/ir/PostingsEntry.java
+END
+SearchGUI.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/ir_lab/!svn/ver/7/skeleton/ir/SearchGUI.java
+END
+Indexer.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/ir_lab/!svn/ver/2/skeleton/ir/Indexer.java
+END

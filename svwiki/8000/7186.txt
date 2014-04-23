@@ -1,0 +1,1 @@
+'''Blobprogrammering''' är ett [[antimönster]] som innebär att#man i ett [[objektorienterat programspråk]] har ett jätteobjekt som sköter huvuddelen av all funktionalitet i programmet.#man i en [[relationsdatabas]] har en jättetabell som alla andra småtabeller är relaterade till.==Se även==*[[Antimönster]]{{programmeringsstub}}[[Kategori:Antimönster]]

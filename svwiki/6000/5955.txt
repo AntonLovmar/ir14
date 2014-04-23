@@ -1,0 +1,1 @@
+'''ANDOS''', ryskt [[operativsystem]] som användes av bland annat [[Elektronika BK-0010]]. ANDOS skapades 1990 och släpptes 1992.==Externa länkar==* [http://www.df.ru/~andos/ ANDOS Official Homepage]{{Operativsystemstub}}{{STANDARDSORTERING:Andos}}[[Kategori:Operativsystem]][[en:ANDOS]][[es:ANDOS]][[ru:ANDOS]]

@@ -1,0 +1,1 @@
+'''TCL''' har flera betydelser:*ett [[KOM]]-system, The Common Link*programmeringsspråket Tool Command Language, se [[Tcl]]{{trebokstavsförgrening}}[[en:TCL]][[eo:TCL]][[fr:TCL]][[ko:TCL]][[it:TCL]][[nl:Tcl]][[ja:TCL]][[pl:TCL]][[vi:Tcl (định hướng)]][[wuu:TCL]][[zh:TCL]]

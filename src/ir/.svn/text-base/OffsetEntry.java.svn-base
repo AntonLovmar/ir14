@@ -1,0 +1,21 @@
+/*  
+ *   This file is part of the computer assignment for the
+ *   Information Retrieval course at KTH.
+ * 
+ *   First version:  Johan Boye, 2010
+ *   Second version: Johan Boye, 2012
+ */  
+
+package ir;
+
+import java.io.Serializable;
+
+public class OffsetEntry implements Serializable {
+    
+    public int offset;
+
+    public OffsetEntry( int offset ) {
+	this.offset = offset;
+    }
+
+}
