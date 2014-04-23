@@ -85,11 +85,13 @@ public class HashedIndex implements Index {
 	}
 	
 	public PostingsList cosineSimilarity(List<PostingsList> terms) {
-		double[] scores = new double[numDocs];
+		double[] scores = new double[numDocs+1];
 
 		for(PostingsList postings : terms) {
 			for(int i = 0; i < postings.size(); i++) {
 				PostingsEntry doc = postings.get(i);
+                if(doc == null)
+                    continue;
 				double idf = Math.log(numDocs/postings.getDocumentFrequency());
 				double tfidf = doc.getTermFrequency()*idf;
 				scores[doc.docID] += tfidf;

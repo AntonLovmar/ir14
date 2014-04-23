@@ -102,6 +102,8 @@ public class SearchGUI extends JFrame {
 	ButtonGroup queries = new ButtonGroup();
 	ButtonGroup ranking = new ButtonGroup();
 	ButtonGroup structure = new ButtonGroup();
+    private JPanel expansionMenu = new JPanel();
+
 
 	/* ----------------------------------------------- */
 
@@ -161,8 +163,45 @@ public class SearchGUI extends JFrame {
 		// Display area for search results
 		p.add(resultPane);
 		resultWindow.setFont(resultFont);
+        JToggleButton expansionButton = new JToggleButton("Search with expanded query");
+        expansionMenu.add(expansionButton);
+        p.add(expansionMenu);
 		// Show the interface
 		setVisible(true);
+
+        Action queryExpansionSearch = new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+               //TODO put some cool query expansion
+                QueryExpander expander = new QueryExpander(indexer);
+                Query newQuery = expander.expandQuery(results, query, 10);
+                synchronized (indexLock) {
+                    results = indexer.index.search(newQuery, queryType, rankingType, structureType);
+                }
+                StringBuffer buf = new StringBuffer();
+                if (results != null) {
+                    buf.append("\nFound " + results.size() + " matching document(s)\n\n");
+                    for (int i = 0; i < results.size(); i++) {
+                        buf.append(" " + i + ". ");
+                        String filename = indexer.index.docIDs.get("" + results.get(i).docID);
+                        if (filename == null) {
+                            buf.append("" + results.get(i).docID);
+                        } else {
+                            buf.append(filename);
+                        }
+                        if (queryType == Index.RANKED_QUERY) {
+                            buf.append("   " + String.format("%.5f", results.get(i).score));
+                        }
+                        buf.append("\n");
+                    }
+                } else {
+                    buf.append("\nFound 0 matching document(s)\n\n");
+                }
+                resultWindow.setText(buf.toString());
+                resultWindow.setCaretPosition(0);
+
+            }
+        };
+        expansionButton.addActionListener(queryExpansionSearch);
 
 		Action search = new AbstractAction() {
 			public void actionPerformed(ActionEvent e) {
