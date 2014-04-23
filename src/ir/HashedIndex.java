@@ -26,6 +26,7 @@ public class HashedIndex implements Index {
 	private HashMap<String, PostingsList> index = new HashMap<>();
 	private int numDocs = 0;
 	private HashMap<Integer, Integer> occurences = new HashMap<>();
+    private final double  LOW_IDF = 0.3;
 
 	/**
 	 * Inserts this token in the index.
@@ -85,6 +86,10 @@ public class HashedIndex implements Index {
 	}
 	
 	public PostingsList cosineSimilarity(Query query) {
+        double[] queryIdfs = computeIdfForTerms(query);
+        removeTerms(query, queryIdfs);
+
+
 		double[] scores = new double[numDocs+1];
 
 		for(int j = 0; j < query.terms.size(); j++) {
@@ -114,6 +119,32 @@ public class HashedIndex implements Index {
 		result.sort();
 		return result;
 	}
+
+    private void removeTerms(Query query, double[] idfForTerms) {
+        int removed = 0;
+        for (int i = 0; i < idfForTerms.length; i++) {
+            if(idfForTerms[i] < LOW_IDF){
+                query.terms.remove(i-removed);
+                query.weights.remove(i-removed);
+                removed++;
+            }
+        }
+    }
+
+
+    private double[] computeIdfForTerms(Query query) {
+        double[] idf = new double[query.terms.size()];
+        int N = docIDs.size();
+        int i = 0;
+        for (String term : query.terms) {
+            PostingsList list = index.get(term);
+            int df_t = list.size();
+            idf[i] = Math.log(N/df_t);
+            System.out.println("idf for: "+term+" "+idf[i]);
+            i++;
+        }
+        return idf;
+    }
 
 	public PostingsList union(List<PostingsList> terms) {
 		PostingsList result = new PostingsList();

@@ -182,7 +182,7 @@ public class SearchGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                //TODO put some cool query expansion
                 QueryExpander expander = new QueryExpander(indexer);
-                Query newQuery = expander.expandQuery(results, query, 10);
+                Query newQuery = expander.expandQuery(results, query, 20);
                 synchronized (indexLock) {
                     results = indexer.index.search(newQuery, queryType, rankingType, structureType);
                 }
@@ -195,7 +195,7 @@ public class SearchGUI extends JFrame {
                         
                         String[] s = indexer.index.docIDs.get("" + results.get(i).docID).split("/");
 						String[] end = s[s.length-1].split("\\.");
-						int docId = Integer.parseInt(end[0]);
+                            int docId = Integer.parseInt(end[0]);
 						buf.append(articleMapping.get(docId));
 						buf.append("  " + docId);
                         

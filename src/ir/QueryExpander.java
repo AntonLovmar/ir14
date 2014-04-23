@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class QueryExpander {
     private Indexer indexer;
     private HashedIndex index;
-    private Map<String, Integer> candidateList;
-    private final int minimumWordLenth = 5;
+    private Map<String, Double> candidateList;
+    private final int minimumWordLength = 2;
 
     public QueryExpander(Indexer indexer) {
         this.indexer = indexer;
@@ -35,9 +35,10 @@ public class QueryExpander {
         //Build a list of terms that are candidates for synonyms
         buildCandidateList(evaluatedDocuments, query, docIds);
 
-        List<String> newTerms = selectCandidates(docsToEvaluate);
+        List<String> newTerms = selectCandidates();
 
         for(int i = 0; i < newTerms.size(); i++) {
+            System.out.println(newTerms.get(i));
             query.terms.add(newTerms.get(i));
             query.weights.add(1.0/newTerms.size());
 
@@ -56,11 +57,13 @@ public class QueryExpander {
                     PostingsEntry queryDoc = index.getPostings(query.terms.get(j)).getEntry(docID);
                     if(termDoc == null || queryDoc == null)
                         continue;
-                    if(termDoc.getOffsets().size() >= queryDoc.getOffsets().size() && term.length() >= minimumWordLenth && !term.equals(query.terms.get(j))) {
+                    if(termDoc.getOffsets().size() >= queryDoc.getOffsets().size() && term.length() >= minimumWordLength && !term.equals(query.terms.get(j))) {
+                        double idft = Math.log(Index.docIDs.size() / index.getPostings(term).size());
+
                         if(candidateList.get(term) == null) {
-                            candidateList.put(term, 1);
+                            candidateList.put(term, idft);
                         } else {
-                            candidateList.put(term, candidateList.get(term)+  1);
+                            candidateList.put(term, candidateList.get(term)+  idft);
                         }
                     }
                 }
@@ -68,14 +71,22 @@ public class QueryExpander {
         }
 
     }
-    public List<String> selectCandidates(int evaluatedDocs) {
-        double limit = evaluatedDocs/2;
-        List<String> selectedCandidates = new ArrayList<String>();
-        for(String term : candidateList.keySet()) {
-            if(candidateList.get(term) >= limit) {
-                selectedCandidates.add(term);
-            }
-        }
+    public List<String> selectCandidates() {
+       List<String> selectedCandidates = new ArrayList<>();
+       for(int i = 0; i < 5; i++) {
+           String highest = "";
+           double score = 0;
+           if(candidateList.isEmpty())
+               break;
+           for(String term : candidateList.keySet()) {
+                if(candidateList.get(term) > score) {
+                    highest = term;
+                    score = candidateList.get(term);
+                }
+           }
+           selectedCandidates.add(highest);
+           candidateList.remove(highest);
+       }
         return selectedCandidates;
     }
 

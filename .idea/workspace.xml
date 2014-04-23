@@ -64,24 +64,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QueryExpander.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="QueryExpander.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="9" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1470">
+            <state line="31" column="50" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.23489933" vertical-offset="360" max-vertical-offset="1635">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#734#756#0" expanded="true" />
                 <element signature="e#804#813#0" expanded="true" />
-                <element signature="e#2914#2922#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HashedIndex.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HashedIndex.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/HashedIndex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="12" selection-start="2901" selection-end="2901" vertical-scroll-proportion="0.71157897" vertical-offset="1027" max-vertical-offset="3375">
+            <state line="133" column="0" selection-start="3729" selection-end="3729" vertical-scroll-proportion="0.0" vertical-offset="2610" max-vertical-offset="3840">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NumberFormatException.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/lang/NumberFormatException.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Integer.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/lang/Integer.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="105" column="0" selection-start="4091" selection-end="4091" vertical-scroll-proportion="0.0" vertical-offset="1203" max-vertical-offset="1650">
               <folding />
             </state>
           </provider>
@@ -119,10 +136,15 @@
       <file leaf-file-name="SearchGUI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/SearchGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="70" selection-start="5647" selection-end="5647" vertical-scroll-proportion="0.0" vertical-offset="2360" max-vertical-offset="4485">
+            <state line="177" column="29" selection-start="5625" selection-end="5625" vertical-scroll-proportion="0.0" vertical-offset="2221" max-vertical-offset="4995">
               <folding>
-                <element signature="e#5376#6920#0" expanded="true" />
-                <element signature="e#6909#6910#0" expanded="true" />
+                <element signature="e#1719#1736#0" expanded="true" />
+                <element signature="e#5685#7634#0" expanded="true" />
+                <element signature="e#7623#7624#0" expanded="true" />
+                <element signature="e#9441#9620#0" expanded="true" />
+                <element signature="e#9615#9616#0" expanded="true" />
+                <element signature="e#9682#9810#0" expanded="true" />
+                <element signature="e#9805#9806#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,10 +171,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/ir/ScoreItem.java" />
         <option value="$PROJECT_DIR$/src/ir/PageRank.java" />
-        <option value="$PROJECT_DIR$/src/ir/SearchGUI.java" />
         <option value="$PROJECT_DIR$/src/ir/Indexer.java" />
-        <option value="$PROJECT_DIR$/src/ir/QueryExpander.java" />
+        <option value="$PROJECT_DIR$/src/ir/SearchGUI.java" />
         <option value="$PROJECT_DIR$/src/ir/HashedIndex.java" />
+        <option value="$PROJECT_DIR$/src/ir/QueryExpander.java" />
       </list>
     </option>
   </component>
@@ -550,32 +572,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/SearchGUI.java">
+    <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/lang/NumberFormatException.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="70" selection-start="5647" selection-end="5647" vertical-scroll-proportion="0.0" vertical-offset="2000" max-vertical-offset="4485">
-          <folding>
-            <element signature="e#5376#6920#0" expanded="true" />
-            <element signature="e#6909#6910#0" expanded="true" />
-          </folding>
+        <state line="14" column="0" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
+    <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/lang/Integer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="9" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1470">
+        <state line="105" column="0" selection-start="4091" selection-end="4091" vertical-scroll-proportion="0.0" vertical-offset="1203" max-vertical-offset="1650">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/SearchGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="29" selection-start="5625" selection-end="5625" vertical-scroll-proportion="0.0" vertical-offset="2221" max-vertical-offset="4995">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#734#756#0" expanded="true" />
-            <element signature="e#804#813#0" expanded="true" />
-            <element signature="e#2914#2922#0" expanded="true" />
+            <element signature="e#1719#1736#0" expanded="true" />
+            <element signature="e#5685#7634#0" expanded="true" />
+            <element signature="e#7623#7624#0" expanded="true" />
+            <element signature="e#9441#9620#0" expanded="true" />
+            <element signature="e#9615#9616#0" expanded="true" />
+            <element signature="e#9682#9810#0" expanded="true" />
+            <element signature="e#9805#9806#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/HashedIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="12" selection-start="2901" selection-end="2901" vertical-scroll-proportion="0.71157897" vertical-offset="1027" max-vertical-offset="3375">
+        <state line="133" column="0" selection-start="3729" selection-end="3729" vertical-scroll-proportion="0.0" vertical-offset="2610" max-vertical-offset="3840">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="50" selection-start="1160" selection-end="1160" vertical-scroll-proportion="0.23489933" vertical-offset="360" max-vertical-offset="1635">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#734#756#0" expanded="true" />
+            <element signature="e#804#813#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
