@@ -98,17 +98,10 @@ public class SearchGUI extends JFrame {
 	JRadioButtonMenuItem phraseItem = new JRadioButtonMenuItem("Phrase query");
 	JRadioButtonMenuItem rankedItem = new JRadioButtonMenuItem("Ranked retrieval");
 	JRadioButtonMenuItem tfidfItem = new JRadioButtonMenuItem("tf-idf");
-	JRadioButtonMenuItem pagerankItem = new JRadioButtonMenuItem("PageRank");
-	JRadioButtonMenuItem combinationItem = new JRadioButtonMenuItem("Combination");
 	JRadioButtonMenuItem unigramItem = new JRadioButtonMenuItem("Unigram");
-	JRadioButtonMenuItem bigramItem = new JRadioButtonMenuItem("Bigram");
-	JRadioButtonMenuItem subphraseItem = new JRadioButtonMenuItem("Subphrase");
 	ButtonGroup queries = new ButtonGroup();
 	ButtonGroup ranking = new ButtonGroup();
 	ButtonGroup structure = new ButtonGroup();
-	public JPanel feedbackBar = new JPanel();
-	JCheckBox[] feedbackButton = new JCheckBox[10];
-	JToggleButton feedbackExecutor = new JToggleButton("New search");
 
 	/* ----------------------------------------------- */
 
@@ -142,20 +135,12 @@ public class SearchGUI extends JFrame {
 		optionsMenu.add(phraseItem);
 		optionsMenu.add(rankedItem);
 		rankingMenu.add(tfidfItem);
-		rankingMenu.add(pagerankItem);
-		rankingMenu.add(combinationItem);
 		structureMenu.add(unigramItem);
-		structureMenu.add(bigramItem);
-		structureMenu.add(subphraseItem);
 		queries.add(intersectionItem);
 		queries.add(phraseItem);
 		queries.add(rankedItem);
 		ranking.add(tfidfItem);
-		ranking.add(pagerankItem);
-		ranking.add(combinationItem);
 		structure.add(unigramItem);
-		structure.add(bigramItem);
-		structure.add(subphraseItem);
 		intersectionItem.setSelected(true);
 		tfidfItem.setSelected(true);
 		unigramItem.setSelected(true);
@@ -176,13 +161,6 @@ public class SearchGUI extends JFrame {
 		// Display area for search results
 		p.add(resultPane);
 		resultWindow.setFont(resultFont);
-		// Relevance feedback
-		for (int i = 0; i < 10; i++) {
-			feedbackButton[i] = new JCheckBox(i + "");
-			feedbackBar.add(feedbackButton[i]);
-		}
-		feedbackBar.add(feedbackExecutor);
-		p.add(feedbackBar);
 		// Show the interface
 		setVisible(true);
 
@@ -224,49 +202,6 @@ public class SearchGUI extends JFrame {
 		};
 		queryWindow.registerKeyboardAction(search, "", KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_FOCUSED);
 
-		Action relevanceFeedbackSearch = new AbstractAction() {
-			public void actionPerformed(ActionEvent e) {
-				// Check that a ranked search has been made prior to the
-				// relevance feedback
-				StringBuffer buf = new StringBuffer();
-				if ((results != null) && (queryType == Index.RANKED_QUERY)) {
-					// Read user relevance feedback selections
-					boolean[] docIsRelevant = { false, false, false, false, false, false, false, false, false, false };
-					for (int i = 0; i < 10; i++) {
-						docIsRelevant[i] = feedbackButton[i].isSelected();
-					}
-					// Expand the current search query with the documents marked
-					// as relevant
-					query.relevanceFeedback(results, docIsRelevant, indexer);
-
-					// Perform a new search with the weighted and expanded
-					// query. Access to the index is
-					// synchronized since we don't want to search at the same
-					// time we're indexing new files
-					// (this might corrupt the index).
-					synchronized (indexLock) {
-						results = indexer.index.search(query, queryType, rankingType, structureType);
-					}
-					buf.append("\nSearch after relevance feedback:\n");
-					buf.append("\nFound " + results.size() + " matching document(s)\n\n");
-					for (int i = 0; i < results.size(); i++) {
-						buf.append(" " + i + ". ");
-						String filename = indexer.index.docIDs.get("" + results.get(i).docID);
-						if (filename == null) {
-							buf.append("" + results.get(i).docID);
-						} else {
-							buf.append(filename);
-						}
-						buf.append("   " + String.format("%.5f", results.get(i).score) + "\n");
-					}
-				} else {
-					buf.append("\nThere was no returned ranked list to give feedback on.\n\n");
-				}
-				resultWindow.setText(buf.toString());
-				resultWindow.setCaretPosition(0);
-			}
-		};
-		feedbackExecutor.addActionListener(relevanceFeedbackSearch);
 
 		Action saveAndQuit = new AbstractAction() {
 			public void actionPerformed(ActionEvent e) {
@@ -313,40 +248,12 @@ public class SearchGUI extends JFrame {
 		};
 		tfidfItem.addActionListener(setTfidfRanking);
 
-		Action setPagerankRanking = new AbstractAction() {
-			public void actionPerformed(ActionEvent e) {
-				rankingType = Index.PAGERANK;
-			}
-		};
-		pagerankItem.addActionListener(setPagerankRanking);
-
-		Action setCombinationRanking = new AbstractAction() {
-			public void actionPerformed(ActionEvent e) {
-				rankingType = Index.COMBINATION;
-			}
-		};
-		combinationItem.addActionListener(setCombinationRanking);
-
 		Action setUnigramStructure = new AbstractAction() {
 			public void actionPerformed(ActionEvent e) {
 				structureType = Index.UNIGRAM;
 			}
 		};
 		unigramItem.addActionListener(setUnigramStructure);
-
-		Action setBigramStructure = new AbstractAction() {
-			public void actionPerformed(ActionEvent e) {
-				structureType = Index.BIGRAM;
-			}
-		};
-		bigramItem.addActionListener(setBigramStructure);
-
-		Action setSubphraseStructure = new AbstractAction() {
-			public void actionPerformed(ActionEvent e) {
-				structureType = Index.SUBPHRASE;
-			}
-		};
-		subphraseItem.addActionListener(setSubphraseStructure);
 	}
 
 	/* ----------------------------------------------- */

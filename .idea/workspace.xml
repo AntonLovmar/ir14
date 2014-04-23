@@ -64,22 +64,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PageRank.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ir/PageRank.java">
+      <file leaf-file-name="QueryExpander.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="5" selection-start="2487" selection-end="2487" vertical-scroll-proportion="1.4210526" vertical-offset="540" max-vertical-offset="2490">
-              <folding>
-                <element signature="docComment;method#readDocs#0;class#PageRank#0" expanded="false" />
-                <element signature="method#readDocs#0;class#PageRank#0" expanded="false" />
-                <element signature="method#printScores#0;class#PageRank#0" expanded="false" />
-                <element signature="method#createProbabilityMatrix#0;class#PageRank#0" expanded="false" />
-                <element signature="method#multiplyMatrix#0;class#PageRank#0" expanded="false" />
-                <element signature="method#computeMonteCarlo#0;class#PageRank#0" expanded="false" />
-                <element signature="method#computeMonteCarlo2#0;class#PageRank#0" expanded="false" />
-                <element signature="method#computeMonteCarlo3#0;class#PageRank#0" expanded="false" />
-                <element signature="method#getRandomLink#0;class#PageRank#0" expanded="false" />
-                <element signature="method#main#0;class#PageRank#0" expanded="false" />
-              </folding>
+            <state line="7" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchGUI.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ir/SearchGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="169" column="56" selection-start="5318" selection-end="5318" vertical-scroll-proportion="2.8421052" vertical-offset="720" max-vertical-offset="3900">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,6 +94,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/ir/ScoreItem.java" />
         <option value="$PROJECT_DIR$/src/ir/PageRank.java" />
+        <option value="$PROJECT_DIR$/src/ir/QueryExpander.java" />
+        <option value="$PROJECT_DIR$/src/ir/SearchGUI.java" />
       </list>
     </option>
   </component>
@@ -401,6 +401,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -416,7 +417,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -442,78 +442,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ir/PageRank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="329" column="9" selection-start="11231" selection-end="11231" vertical-scroll-proportion="0.0" vertical-offset="2865" max-vertical-offset="2865">
-          <folding>
-            <element signature="docComment;method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#printScores#0;class#PageRank#0" expanded="false" />
-            <element signature="method#createProbabilityMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#multiplyMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo2#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo3#0;class#PageRank#0" expanded="false" />
-            <element signature="method#getRandomLink#0;class#PageRank#0" expanded="false" />
-            <element signature="method#main#0;class#PageRank#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/PageRank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="329" column="9" selection-start="11231" selection-end="11231" vertical-scroll-proportion="0.0" vertical-offset="2865" max-vertical-offset="2865">
-          <folding>
-            <element signature="docComment;method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#printScores#0;class#PageRank#0" expanded="false" />
-            <element signature="method#createProbabilityMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#multiplyMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo2#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo3#0;class#PageRank#0" expanded="false" />
-            <element signature="method#getRandomLink#0;class#PageRank#0" expanded="false" />
-            <element signature="method#main#0;class#PageRank#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/PageRank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="22" selection-start="8494" selection-end="8494" vertical-scroll-proportion="0.0" vertical-offset="3885" max-vertical-offset="4035">
-          <folding>
-            <element signature="docComment;method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#printScores#0;class#PageRank#0" expanded="false" />
-            <element signature="method#createProbabilityMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#multiplyMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo2#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo3#0;class#PageRank#0" expanded="false" />
-            <element signature="method#getRandomLink#0;class#PageRank#0" expanded="false" />
-            <element signature="method#main#0;class#PageRank#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/PageRank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="40" selection-start="5646" selection-end="5646" vertical-scroll-proportion="0.0" vertical-offset="2670" max-vertical-offset="3420">
-          <folding>
-            <element signature="docComment;method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#printScores#0;class#PageRank#0" expanded="false" />
-            <element signature="method#createProbabilityMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#multiplyMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo2#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo3#0;class#PageRank#0" expanded="false" />
-            <element signature="method#getRandomLink#0;class#PageRank#0" expanded="false" />
-            <element signature="method#main#0;class#PageRank#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ScoreItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="30" selection-start="378" selection-end="389" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="525">
@@ -525,24 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2385">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/PageRank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="3465">
-          <folding>
-            <element signature="docComment;method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#printScores#0;class#PageRank#0" expanded="false" />
-            <element signature="method#createProbabilityMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#multiplyMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo2#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo3#0;class#PageRank#0" expanded="false" />
-            <element signature="method#getRandomLink#0;class#PageRank#0" expanded="false" />
-            <element signature="method#main#0;class#PageRank#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -560,21 +470,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/PageRank.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="5" selection-start="2487" selection-end="2487" vertical-scroll-proportion="1.4210526" vertical-offset="540" max-vertical-offset="2490">
-          <folding>
-            <element signature="docComment;method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#readDocs#0;class#PageRank#0" expanded="false" />
-            <element signature="method#printScores#0;class#PageRank#0" expanded="false" />
-            <element signature="method#createProbabilityMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#multiplyMatrix#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo2#0;class#PageRank#0" expanded="false" />
-            <element signature="method#computeMonteCarlo3#0;class#PageRank#0" expanded="false" />
-            <element signature="method#getRandomLink#0;class#PageRank#0" expanded="false" />
-            <element signature="method#main#0;class#PageRank#0" expanded="false" />
-          </folding>
+        <state line="7" column="0" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/SearchGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="56" selection-start="5318" selection-end="5318" vertical-scroll-proportion="2.8421052" vertical-offset="720" max-vertical-offset="3900">
+          <folding />
         </state>
       </provider>
     </entry>
