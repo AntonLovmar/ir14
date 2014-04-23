@@ -11,8 +11,14 @@ package ir;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.regex.Pattern;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -53,6 +59,9 @@ public class SearchGUI extends JFrame {
 
 	/** Directories that should be indexed. */
 	LinkedList<String> dirNames = new LinkedList<String>();
+	
+	/** Mapping article numbers to articleTexts*/
+	static HashMap<Integer, String> articleMapping = new HashMap<Integer, String>();
 
 	/** The query type (either intersection, phrase, or ranked). */
 	int queryType = Index.INTERSECTION_QUERY;
@@ -182,12 +191,21 @@ public class SearchGUI extends JFrame {
                     buf.append("\nFound " + results.size() + " matching document(s)\n\n");
                     for (int i = 0; i < results.size(); i++) {
                         buf.append(" " + i + ". ");
-                        String filename = indexer.index.docIDs.get("" + results.get(i).docID);
-                        if (filename == null) {
-                            buf.append("" + results.get(i).docID);
-                        } else {
-                            buf.append(filename);
-                        }
+                        
+                        
+                        String[] s = indexer.index.docIDs.get("" + results.get(i).docID).split("/");
+						String[] end = s[s.length-1].split("\\.");
+						int docId = Integer.parseInt(end[0]);
+						buf.append(articleMapping.get(docId));
+						buf.append("  " + docId);
+                        
+                        
+//                        String filename = indexer.index.docIDs.get("" + results.get(i).docID);
+//                        if (filename == null) {
+//                            buf.append("" + results.get(i).docID);
+//                        } else {
+//                            buf.append(filename);
+//                        }
                         if (queryType == Index.RANKED_QUERY) {
                             buf.append("   " + String.format("%.5f", results.get(i).score));
                         }
@@ -221,12 +239,18 @@ public class SearchGUI extends JFrame {
 					buf.append("\nFound " + results.size() + " matching document(s)\n\n");
 					for (int i = 0; i < results.size(); i++) {
 						buf.append(" " + i + ". ");
-						String filename = indexer.index.docIDs.get("" + results.get(i).docID);
-						if (filename == null) {
-							buf.append("" + results.get(i).docID);
-						} else {
-							buf.append(filename);
-						}
+						String[] s = indexer.index.docIDs.get("" + results.get(i).docID).split("/");
+						String[] end = s[s.length-1].split("\\.");
+						int docId = Integer.parseInt(end[0]);
+						buf.append(articleMapping.get(docId));
+						buf.append("  " + docId);
+						
+//						String filename = indexer.index.docIDs.get("" + results.get(i).docID);
+//						if (filename == null) {
+//							buf.append("" + results.get(i).docID);
+//						} else {
+//							buf.append(filename);
+//						}
 						if (queryType == Index.RANKED_QUERY) {
 							buf.append("   " + String.format("%.5f", results.get(i).score));
 						}
@@ -339,11 +363,23 @@ public class SearchGUI extends JFrame {
 
 	/* ----------------------------------------------- */
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		SearchGUI s = new SearchGUI();
 		s.createGUI(args);
 		s.decodeArgs(args);
 		s.index();
+		decodeArticleTitles();
+	}
+	
+	public static void decodeArticleTitles() throws IOException {
+		File artTitles = new File("svwiki_links/articleTitles.txt");
+		BufferedReader br = new BufferedReader(new FileReader(artTitles));  
+		String line = null;  
+		while ((line = br.readLine()) != null)  
+		{  
+		   String[] args = line.split(";");
+		   articleMapping.put(Integer.parseInt(args[0]), args[1]);
+		} 
 	}
 
 }
