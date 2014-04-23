@@ -78,28 +78,34 @@ public class HashedIndex implements Index {
 		} else if (queryType == Index.PHRASE_QUERY) {
 			return positionalIntersect(parameters);
 		} else if (queryType == Index.RANKED_QUERY) {
-			return cosineSimilarity(parameters);
+			return cosineSimilarity(query);
 		}
 		return null;
 		
 	}
 	
-	public PostingsList cosineSimilarity(List<PostingsList> terms) {
+	public PostingsList cosineSimilarity(Query query) {
 		double[] scores = new double[numDocs+1];
 
-		for(PostingsList postings : terms) {
+		for(int j = 0; j < query.terms.size(); j++) {
+            PostingsList postings = index.get(query.terms.get(j));
+            double wtq = query.weights.get(j);
 			for(int i = 0; i < postings.size(); i++) {
 				PostingsEntry doc = postings.get(i);
                 if(doc == null)
                     continue;
 				double idf = Math.log(numDocs/postings.getDocumentFrequency());
 				double tfidf = doc.getTermFrequency()*idf;
-				scores[doc.docID] += tfidf;
+				scores[doc.docID] += tfidf*wtq;
 			}
 		}
 		for(int i = 0; i < numDocs; i++) {
 			scores[i] = scores[i]/occurences.get(i);
 		}
+        List<PostingsList> terms = new ArrayList<PostingsList>();
+        for (String term : query.terms) {
+            terms.add(index.get(term));
+        }
 		PostingsList result = union(terms);
 		for(int i = 0; i  < result.size(); i++) {
 			PostingsEntry entry = result.get(i);

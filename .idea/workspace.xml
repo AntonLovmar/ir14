@@ -67,12 +67,22 @@
       <file leaf-file-name="QueryExpander.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="29" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1125">
+            <state line="43" column="9" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1470">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#555#577#0" expanded="true" />
-                <element signature="e#948#954#0" expanded="true" />
+                <element signature="e#734#756#0" expanded="true" />
+                <element signature="e#804#813#0" expanded="true" />
+                <element signature="e#2914#2922#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HashedIndex.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ir/HashedIndex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="104" column="12" selection-start="2901" selection-end="2901" vertical-scroll-proportion="0.71157897" vertical-offset="1027" max-vertical-offset="3375">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,7 +99,7 @@
       <file leaf-file-name="Indexer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="17" selection-start="5727" selection-end="5727" vertical-scroll-proportion="0.0" vertical-offset="1910" max-vertical-offset="3015">
+            <state line="175" column="46" selection-start="5454" selection-end="5454" vertical-scroll-proportion="0.0" vertical-offset="2315" max-vertical-offset="3015">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,20 +119,11 @@
       <file leaf-file-name="SearchGUI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/SearchGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="70" selection-start="5647" selection-end="5647" vertical-scroll-proportion="0.0" vertical-offset="2000" max-vertical-offset="4485">
+            <state line="175" column="70" selection-start="5647" selection-end="5647" vertical-scroll-proportion="0.0" vertical-offset="2360" max-vertical-offset="4485">
               <folding>
                 <element signature="e#5376#6920#0" expanded="true" />
                 <element signature="e#6909#6910#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HashedIndex.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ir/HashedIndex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="42" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.42736843" vertical-offset="1087" max-vertical-offset="3285">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -148,9 +149,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/ir/ScoreItem.java" />
         <option value="$PROJECT_DIR$/src/ir/PageRank.java" />
+        <option value="$PROJECT_DIR$/src/ir/SearchGUI.java" />
         <option value="$PROJECT_DIR$/src/ir/Indexer.java" />
         <option value="$PROJECT_DIR$/src/ir/QueryExpander.java" />
-        <option value="$PROJECT_DIR$/src/ir/SearchGUI.java" />
         <option value="$PROJECT_DIR$/src/ir/HashedIndex.java" />
       </list>
     </option>
@@ -470,7 +471,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21777222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -526,15 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="17" selection-start="5727" selection-end="5727" vertical-scroll-proportion="0.0" vertical-offset="2315" max-vertical-offset="3015">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/Query.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="975">
@@ -549,13 +541,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="29" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1125">
+        <state line="175" column="46" selection-start="5454" selection-end="5454" vertical-scroll-proportion="0.0" vertical-offset="2315" max-vertical-offset="3015">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#555#577#0" expanded="true" />
-            <element signature="e#948#954#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,9 +560,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/QueryExpander.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="9" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1470">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#734#756#0" expanded="true" />
+            <element signature="e#804#813#0" expanded="true" />
+            <element signature="e#2914#2922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/HashedIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="42" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.42736843" vertical-offset="1087" max-vertical-offset="3285">
+        <state line="104" column="12" selection-start="2901" selection-end="2901" vertical-scroll-proportion="0.71157897" vertical-offset="1027" max-vertical-offset="3375">
           <folding />
         </state>
       </provider>
